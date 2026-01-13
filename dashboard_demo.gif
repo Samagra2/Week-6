@@ -1,0 +1,28 @@
+
+---
+
+## 🎥 `dashboard_demo.gif` (HOW TO CREATE)
+
+### ✅ Method 1: Using Screen Recorder (Recommended)
+1. Run `dashboard.ipynb` or `dashboard.py`
+2. Scroll through:
+   - Static Seaborn plots
+   - Interactive Plotly chart
+3. Record screen using:
+   - **Windows:** ScreenToGif / OBS
+   - **Mac:** QuickTime
+4. Export as:
+
+---
+
+### ✅ Method 2: Programmatic GIF (Optional – Python)
+
+```python
+import imageio
+from glob import glob
+
+images = []
+for file in sorted(glob("visualizations/*.png")):
+ images.append(imageio.imread(file))
+
+imageio.mimsave("dashboard_demo.gif", images, duration=1)
